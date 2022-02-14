@@ -19,8 +19,7 @@ int main()
         }
         unique_ptr<vector<int>> unicPtr = make_unique<vector<int>>(result);
          */
-        unique_ptr<unordered_set<int>> unicPtr1 = make_unique<unordered_set<int>>(no_repeat);
-        return unicPtr1;
+        return make_unique<vector<int>>(begin(no_repeat), end(no_repeat));
     };
 
     cout << "vec" << endl;
@@ -28,8 +27,7 @@ int main()
         cout << i << " ";
     }
     cout << endl;
-    vector<int> vec2(same(vec)->begin(), same(vec)->end());
-    //vec2 = *same(vec);
+    vector<int> vec2 = *same(vec);
     cout << "vec2 - no repeat" << endl;
     for (auto i : vec2){
         cout << i << " ";
